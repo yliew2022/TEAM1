@@ -1,10 +1,10 @@
-import Image from "next/image";
+
 import Navbar from "./components/Navbar";
 
 export default function Home() {
   return (
     <>
-      <Navbar />
+
       <section className="bg-cyan-700 py-24 px-6 md:px-12 lg:px-24">
         <div className="flex flex-col items-center text-white">
           <h1 className="text-3xl md:text-4xl font-semibold text-center leading-tight">
