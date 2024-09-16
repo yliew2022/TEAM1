@@ -1,13 +1,14 @@
+// pages/login.js
 'use client'
 import { useState } from 'react';
 
-export default function Register() {
+export default function Login() {
   const [formData, setFormData] = useState({
     username: '',
     password: '',
   });
-  const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -17,37 +18,30 @@ export default function Register() {
     });
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     setError(null);
 
-    try {
-      const response = await fetch('/api/save-data', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(formData),
-      });
+    // Replace these with your actual username and password validation logic
+    const validUsername = 'user';
+    const validPassword = 'password';
 
-      if (response.ok) {
-        window.location.href = '/login'; // Redirect using window.location
-      } else {
-        const errorData = await response.json();
-        setError(errorData.message || 'Failed to save data');
-      }
-    } catch (error) {
-      console.error('Error submitting form:', error);
-      setError('An unexpected error occurred');
-    } finally {
-      setLoading(false);
+    if (formData.username === validUsername && formData.password === validPassword) {
+      // Handle successful login (e.g., redirect to another page or set authentication state)
+      alert('Login successful!');
+      // For example, redirect to a dashboard page
+      window.location.href = '/dashboard';
+    } else {
+      setError('Invalid username or password');
     }
+
+    setLoading(false);
   };
 
   return (
     <div style={styles.container}>
-      <h1 style={styles.heading}>Register</h1>
+      <h1 style={styles.heading}>Login</h1>
       <form onSubmit={handleSubmit} style={styles.form}>
         <div style={styles.formGroup}>
           <label htmlFor="username" style={styles.label}>Username:</label>
@@ -75,7 +69,7 @@ export default function Register() {
         </div>
         {error && <p style={styles.error}>{error}</p>}
         <button type="submit" style={styles.button} disabled={loading}>
-          {loading ? 'Submitting...' : 'Register'}
+          {loading ? 'Logging in...' : 'Login'}
         </button>
       </form>
     </div>
@@ -84,7 +78,7 @@ export default function Register() {
 
 const styles = {
   container: {
-    maxWidth: '500px',
+    maxWidth: '400px',
     margin: '0 auto',
     padding: '20px',
     backgroundColor: '#f9f9f9',
