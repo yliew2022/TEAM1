@@ -5,9 +5,9 @@ const Navbar = () => {
         <nav className="bg-cyan-900 p-4">
             <div className="max-w-7xl mx-auto flex justify-between items-center">
 
-                <div className="text-white text-2xl font-semibold">
+                <Link className="text-white text-2xl font-semibold" href='/'>
                     FAU Healthcare
-                </div>
+                </Link>
 
 
                 <div className="flex space-x-4">
@@ -18,7 +18,7 @@ const Navbar = () => {
                         Meet the Doctor
                     </Link>
                     <Link
-                        href="/book-appointment"
+                        href="/appointments"
                         className="text-white hover:text-sky-300 transition duration-300"
                     >
                         Book an Appointment

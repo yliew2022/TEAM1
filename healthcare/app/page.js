@@ -1,6 +1,6 @@
 
-import Navbar from "./components/Navbar";
 
+import Link from "next/link";
 export default function Home() {
   return (
     <>
@@ -15,12 +15,15 @@ export default function Home() {
             Personalized care and advanced medical expertise dedicated to your well-being.
           </p>
 
-          <button
-            type="button"
-            className="mt-8 bg-sky-600 hover:bg-sky-700 text-white font-medium rounded-lg text-sm px-6 py-3 transition duration-300"
-          >
-            Book an Appointment
-          </button>
+          <Link href='/appointments'>
+            <button
+              type="button"
+              className="mt-8 bg-sky-600 hover:bg-sky-700 text-white font-medium rounded-lg text-sm px-6 py-3 transition duration-300"
+            >
+              Book an Appointment
+            </button>
+          </Link>
+
         </div>
       </section>
 
@@ -43,34 +46,34 @@ export default function Home() {
         <h1 className="text-4xl font-bold text-center mb-12">Here's how it works</h1>
 
         <div className="max-w-7xl mx-auto grid grid-cols-1  px-5 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          {/* Card 1 */}
+
           <div className="bg-white shadow-lg rounded-lg p-8 text-center">
             <div className="mb-4 text-3xl text-blue-600">
               📅
             </div>
             <h3 className="text-xl font-semibold mb-4">Book an Appointment</h3>
-            <p className="text-gray-600">Easily schedule an appointment with our FAU healthcare experts through our online portal or by phone.</p>
+            <p className="text-gray-600">Easily schedule an appointment with our FAU healthcare expert through our online portal.</p>
           </div>
 
-          {/* Card 2 */}
+
           <div className="bg-white shadow-lg rounded-lg p-8 text-center">
             <div className="mb-4 text-3xl text-blue-600">
               👩‍⚕️
             </div>
-            <h3 className="text-xl font-semibold mb-4">Consult with Our Experts</h3>
-            <p className="text-gray-600">Meet with our board-certified physicians to create a personalized care plan that meets your health needs.</p>
+            <h3 className="text-xl font-semibold mb-4">Consult with Our Expert</h3>
+            <p className="text-gray-600">Meet with our board-certified physician to create a personalized care plan that meets your health needs.</p>
           </div>
 
-          {/* Card 3 */}
+
           <div className="bg-white shadow-lg rounded-lg p-8 text-center">
             <div className="mb-4 text-3xl text-blue-600">
               🏥
             </div>
             <h3 className="text-xl font-semibold mb-4">Receive Comprehensive Care</h3>
-            <p className="text-gray-600">Access state-of-the-art treatments and care from our dedicated medical professionals.</p>
+            <p className="text-gray-600">Access state-of-the-art treatments and care from our dedicated medical professional.</p>
           </div>
 
-          {/* Card 4 */}
+
           <div className="bg-white shadow-lg rounded-lg p-8 text-center">
             <div className="mb-4 text-3xl text-blue-600">
               🔄
