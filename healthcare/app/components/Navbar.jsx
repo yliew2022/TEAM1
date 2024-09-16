@@ -12,6 +12,12 @@ const Navbar = () => {
 
                 <div className="flex space-x-4">
                     <Link
+                        href="/meet-your-doctor"
+                        className="text-white hover:text-sky-300 transition duration-300"
+                    >
+                        Meet the Doctor
+                    </Link>
+                    <Link
                         href="/book-appointment"
                         className="text-white hover:text-sky-300 transition duration-300"
                     >
